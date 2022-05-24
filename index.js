@@ -1,7 +1,15 @@
+// npm install cookie-parser
+
 // set up express server
 const express = require("express");
+const cookieParser = require("cookie-parser");
 const app = express();
 const port = 8000;
+const db = require("./config/mongoose");
+
+app.use(express.urlencoded());
+
+app.use(cookieParser());
 
 // setting up layout
 const expressLayouts = require("express-ejs-layouts");
@@ -12,9 +20,7 @@ app.set("layout extractStyles", true);
 app.set("layout extractScripts", true);
 
 // setting up assets folder
-app.use(
-  express.static("C:/Users/anshu/OneDrive/Desktop/Projects/Codeial/assets")
-);
+app.use(express.static("assets"));
 
 // use express router
 app.use("/", require("./routes"));

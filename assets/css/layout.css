@@ -1,5 +1,12 @@
-body {
+html {
     margin: 0;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     text-align: center;
+    height: 100vh;
+    width: 100vw;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

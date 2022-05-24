@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="/css/user_sign_up.css">
+
+<div class="container">
+    <main class="signup-container">
+
+        <h1 class="heading-primary">Create new account<span class="custom-dot">.</span></h1>
+        <p class="text-mute">Already A Member? <a href="$">Log in</a></p>
+        <form class="signup-form" action="/users/create" method="POST">
+            <div class="f-row input-wrapper">
+                <label class="inp">
+                    <input name="first_name" type="text" class="input-text" placeholder="&nbsp;" required>
+                    <span class="label">First name</span>
+                    <span class="input-icon"><i class="fa-solid fa-address-card"></i></span>
+                </label>
+                <label class="inp">
+                    <input name="last_name" type="text" class="input-text" placeholder="&nbsp;" required>
+                    <span class="label">Last name</span>
+                    <span class="input-icon"><i class="fa-solid fa-address-card"></i></span>
+                </label>
+            </div>
+            <label class="inp">
+                <input name="email" type="email" class="input-text" placeholder="&nbsp;" required>
+                <span class="label">Email</span>
+                <span class="input-icon"><i class="fa-solid fa-envelope"></i></span>
+            </label>
+            <label class="inp">
+                <input name="password" type="password" class="input-text" placeholder="&nbsp;" id="password" required>
+                <span class="label">Password</span>
+                <span class="input-icon input-icon-password" data-password><i class="fa-solid fa-eye"></i></span>
+            </label>
+            <label class="inp">
+                <input name="confirm_password" type="password" class="input-text" placeholder="&nbsp;" id="password"
+                    required>
+                <span class="label">Confirm Password</span>
+                <span class="input-icon input-icon-password" data-password><i class="fa-solid fa-eye"></i></span>
+            </label>
+            <button class="btn btn-signup">Create account</button>
+        </form>
+    </main>
+    <!-- <div class="welcome-container">
+        <h1 class="heading-secondary">Welcome to <span class="lg">Planner Buddy!</span></h1>
+        <img src="https://png2.cleanpng.com/sh/82506800d9e08bf14cb0a38d53322fea/L0KzQYm3VsI1N6Rug5H0aYP2gLBuTfxieKV0iJ9taYPzfLLCTfRmfppofZ92dXz3eb7shPliNZ1miOZ4cD3wf7TylgAuPZM3fqNsMEC4RIKAUsQvOmU5SaUBMkm0RYOCWME1OGI7S6Y9NT7zfri=/kisspng-laptop-display-device-multimedia-laptop-mockup-5b2f1c00541724.2441362915298140163445.png"
+            alt="">
+    </div> -->
+</div>
+<script src="/js/user_sign_up.js"></script>
