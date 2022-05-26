@@ -1,14 +1,20 @@
 const User = require("../models/user");
 
 module.exports.profile = function (req, res) {
-  return res.render("users", {
-    title: "users",
-    welcome_msg: "Welcome to users page",
+  // console.log(req.user);
+  return res.render("user_profile", {
+    title: "Profile Page",
+    name: `${req.user.first_name} ${req.user.last_name}`,
+    email: req.user.email,
   });
 };
 
 // render the sign-up page
 module.exports.signUp = function (req, res) {
+  if (req.isAuthenticated()) {
+    return res.redirect("/users/profile");
+  }
+
   return res.render("user_sign_up", {
     title: "Codeial | Sign Up",
   });
@@ -16,6 +22,10 @@ module.exports.signUp = function (req, res) {
 
 // render the sign-in page
 module.exports.signIn = function (req, res) {
+  if (req.isAuthenticated()) {
+    return res.redirect("/users/profile");
+  }
+
   return res.render("user_sign_in", {
     title: "Codeial | Sign In",
   });
@@ -23,7 +33,7 @@ module.exports.signIn = function (req, res) {
 
 // get the sign up data
 module.exports.create = function (req, res) {
-  console.log(req.body);
+  // console.log(req.body);
   if (req.body.password != req.body.confirm_password) {
     return res.redirect("back");
   }
@@ -49,5 +59,11 @@ module.exports.create = function (req, res) {
 
 // sign in and create a seesion for user
 module.exports.createSession = function (req, res) {
-  // TODO
+  return res.redirect("/");
+};
+
+//  Sign out functionality
+module.exports.destroySession = function (req, res) {
+  req.logout();
+  return res.redirect("/");
 };

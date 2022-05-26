@@ -1,1 +1,24 @@
-<header>Page header</header>
+<% if (title !="Codeial | Sign Up" && title !="Codeial | Sign In" ){ %>
+
+    <header>Page header
+
+        <ul>
+            <% if(locals.user) { %>
+
+                <li>
+                    <a href="/users/sign-out"><button>Sign Out</button></a>
+                </li>
+
+                <% } else {%>
+                    <li>
+                        <a href="/users/sign-in"><button>Sign In</button></a>
+                    </li>
+                    <br>
+                    <li>
+                        <a href="/users/sign-up"><button>Sign up</button></a>
+                    </li>
+
+                    <% } %>
+        </ul>
+    </header>
+    <% } %>
