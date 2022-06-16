@@ -1,24 +1,42 @@
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+
+
+
 <% if (title !="Codeial | Sign Up" && title !="Codeial | Sign In" ){ %>
 
-    <header>Page header
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+                <div class="badge"><a class="navbar-brand mx-2" href="#">Codeial</a></div>
 
-        <ul>
-            <% if(locals.user) { %>
+                <div class="d-flex">
+                    <% if(locals.user) { %>
 
-                <li>
-                    <a href="/users/sign-out"><button>Sign Out</button></a>
-                </li>
 
-                <% } else {%>
-                    <li>
-                        <a href="/users/sign-in"><button>Sign In</button></a>
-                    </li>
-                    <br>
-                    <li>
-                        <a href="/users/sign-up"><button>Sign up</button></a>
-                    </li>
+                        <a href="/users/sign-out"><button class="btn btn-outline-success me-2"
+                                type="button">Sign-out</button></a>
 
-                    <% } %>
-        </ul>
+
+                        <% } else {%>
+
+                            <a href="/users/sign-in"><button class="btn btn-outline-success me-2"
+                                    type="button">Sign-in</button></a>
+
+
+
+                            <a href="/users/sign-up"><button class="btn btn-outline-success me-2"
+                                    type="button">Sign-up</button></a>
+
+
+                            <% } %>
+                </div>
+
+            </nav>
+
+
+        </div>
     </header>
     <% } %>
